@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Examen - Ejercicio 1</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <form method="post">
+        <h1>Calculo de compras</h1>
+        <p>Ingresa tu Nombre</p>
+        <input type="text" name="nombre" value="{{nombre}}" required>
+        <p>Ingresa tu edad</p>
+        <input type="number" name="edad" value="{{edad}}" required>
+        <p>Ingresa la cantidad de tarros de pintura a comprar</p>
+        <input type="number" name="cantidad" value="{{cantidad}}" required>
+        <br><br>
+        <button type="submit">Calcular</button>
+        {% if nombre is defined %}
+            <p>Nombre del cliente: {{nombre}}</p>
+            <p>Total sin descuento: ${{total}}</p>
+            <p>El descuento es de: ${{descuento}}</p>
+            <p>El total a pagar es de: ${{total_condesc}}</p>
+        <br>
+        <a href="/">Volver al inicio</a>
+        {% endif %}
+    </form>
+</body>
+</html>

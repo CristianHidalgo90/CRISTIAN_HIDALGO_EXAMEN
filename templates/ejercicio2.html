@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Examen - Ejercicio 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <form method="post">
+        <h1>Inicio de sesion</h1>
+        <p>Ingresa tu nombre</p>
+        <input type="text" name="usuario" value="{{usuario}}">
+        <p>Ingresa tu contraseña</p>
+        <input type="password" name="pswrd" value="{{pswrd}}">
+        <br><br>
+        <button type="submit">Verificar</button>
+         {% if usuario is defined %}
+            <p>{{mensaje}}</p>
+        <br>
+        <a href="/">Volver al inicio</a>
+        {% endif %}
+    </form>
+
+</body>
+</html>
